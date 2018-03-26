@@ -19,3 +19,18 @@ Bestehende VM aus Vagrant Cloud zum laufen bringen:
 2. Box-image1 wird beim Master verwendet und Box_image2 beim client.
 3. Danch "vagrant up" und die VM´s werden erstellt.
 4. Zum Schluss wieder "vagrant destroy -f"
+
+
+Eigener Service auf Basis IaC implementieren:
+
+1. Dem Master (192.168.1.10) und Client (192.168.1.*) eine Fixe IP geben.
+2. Forward Ports (Guest 80, Host 8080) deklarieren, damit man aich auf die Webseite verbinden kann.
+3. Als nächstes habe ich den Zielordner ausgweählt, in dem die HTML-Seite abgespeichert werden soll.
+4. Am Schluss habe ich noch angegeben, dass Apache mit einer Shell installiert werden soll.
+
+
+Firewall installieren:
+
+1. Als erstes gab ich auf dem Master den Befehl "apt-get install ufw" ein, um die Firewall erstmals zu installieren.
+2. Mit dem Befehl "ufw enable" startet man die Firewall.
+3. Nun "ufw Allow" und die Ports einstellen.
